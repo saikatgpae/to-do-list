@@ -61,3 +61,7 @@ h1 {
 .check-box {
   float: left;
 }
+
+#input-todo {
+  width: -webkit-fill-available;
+}
