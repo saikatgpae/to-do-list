@@ -63,5 +63,22 @@ h1 {
 }
 
 #input-todo {
-  width: -webkit-fill-available;
+  width: 100%;
+  height: 30px;
+  padding-left: 15px;
+  font-style: italic;
+  border: none;
+}
+
+#input-todo:focus {
+  outline: none;
+}
+
+#input-form {
+  display: flex;
+}
+
+#enter {
+  background-color: white;
+  border: none;
 }
