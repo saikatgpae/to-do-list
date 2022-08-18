@@ -4,6 +4,60 @@ $font: "Karla", sans-serif;
 
 body {
   font-family: $font;
-  background-color: black;
-  color: white;
+}
+
+.main {
+  padding: 10px;
+  border: 1px solid rgb(229, 226, 226);
+  text-shadow: 2px 2px 4px #6d6969;
+  box-shadow: 0 0 5px rgb(222, 224, 224);
+}
+
+h1 {
+  text-align: center;
+  font-size: 15px;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  float: right;
+}
+
+.refreshed {
+  transform: rotate(360deg);
+}
+
+.list-item {
+  display: flex;
+  padding: 10px;
+  border: 1px solid rgb(229, 226, 226);
+  text-shadow: 2px 2px 4px #b4b0b0;
+  box-shadow: 0 0 5px rgb(222, 224, 224);
+  justify-content: space-between;
+}
+
+.kebabIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.check-box {
+  float: left;
 }
