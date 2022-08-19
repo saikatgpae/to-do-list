@@ -18,7 +18,7 @@ const printLocalStorage = () => {
       const div = document.createElement('div');
       div.className = 'list-item';
       div.innerHTML = `<h5 class="d-none">${i}</h5><input type="checkbox" class="check-box">
-      <label class="description-label" contenteditable="true">${storedList[i].description}</label><img src="${kIcon}" alt="Kebab Icon" class="kebab icon">
+      <div class="description-label" contenteditable="true">${storedList[i].description}</div><img src="${kIcon}" alt="Kebab Icon" class="kebab icon">
       <img src="${bIcon}" alt="d-none icon bin" class="bin icon ">`;
       document.querySelector('.container').appendChild(div);
     }

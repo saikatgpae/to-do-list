@@ -1,7 +1,6 @@
 import { List } from './lists.js';
 
-const addNew = (e) => {
-  e.preventDefault();
+const addWithEnter = () => {
   const description = document.getElementById('input-todo').value;
   const list = new List();
   list.add(description, false);
@@ -17,6 +16,8 @@ const addNew = (e) => {
     localStorage.setItem('toDolist', JSON.stringify(newList));
     /* eslint-disable */
     location.reload();
-  }
-};
-export { addNew };
+    }
+   }
+
+/* eslint-disable */
+export { addWithEnter }

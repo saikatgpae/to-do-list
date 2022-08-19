@@ -52,7 +52,7 @@ h1 {
 }
 
 .yellwo {
-  background-color: yellow;
+  background-color: rgb(236, 236, 111);
 }
 
 .kebabIcon {
@@ -115,7 +115,7 @@ h1 {
 }
 
 .d-none {
-  display:  none;
+  display: none;
 }
 
 .d-block {
