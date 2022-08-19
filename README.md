@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome books
+# To-do List
 
 > "To-do List" is a simple website that displays a list of works and allows you to add and remove from that list.
 
