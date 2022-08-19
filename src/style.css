@@ -28,14 +28,13 @@ h1 {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.5s;
 }
 
 .icon {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: transform 0.1s ease-in-out;
   float: right;
 }
 
@@ -52,6 +51,10 @@ h1 {
   justify-content: space-between;
 }
 
+.yellwo {
+  background-color: yellow;
+}
+
 .kebabIcon {
   width: 20px;
   height: 20px;
@@ -63,7 +66,7 @@ h1 {
 }
 
 #input-todo {
-  width: 100%;
+  /* width: auto; */
   height: 30px;
   padding-left: 15px;
   font-style: italic;
@@ -76,9 +79,45 @@ h1 {
 
 #input-form {
   display: flex;
+  justify-content: space-between;
 }
 
 #enter {
   background-color: white;
   border: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.clear-all {
+  background-color: rgb(236, 234, 234);
+  padding: 10px;
+  text-align: center;
+}
+
+.clear-all h5 {
+  margin: 0;
+  text-align: center;
+  display: inline;
+}
+
+.clear-all > a {
+  text-decoration: none;
+  color: rgb(115, 113, 113);
+}
+
+.clear-all > a:hover {
+  text-decoration-line: underline;
+}
+
+.bin {
+  display: none;
+}
+
+.d-none {
+  display:  none;
+}
+
+.d-block {
+  display: block;
 }

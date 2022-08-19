@@ -1,8 +1,12 @@
 import './style.css';
 import rIcon from './images/refresh-icon.png';
-import kIcon from './images/3dot.png';
 import { refresh } from './common/refresh.js';
-import { List } from './common/lists.js';
+import { printLocalStorage } from './common/printLoclaStorage.js';
+import { clearAll } from './common/clearAll.js';
+import { addNew } from './common/addNew';
+import { saveEdits } from './common/saveEdits.js'
+
+
 
 // Add the image to todo div div.
 const refreshIcon = new Image();
@@ -10,26 +14,22 @@ refreshIcon.src = rIcon;
 refreshIcon.classList.add('refresh');
 document.querySelector('.todo').appendChild(refreshIcon);
 
-// Onclick change the refresh image.
+// ONCLICK ROTATE THE REFRESH ICON AND REFRESH THE WHOLE PAGE
 document.querySelector('.refresh').addEventListener('click', refresh);
 
-// Display the stored lists.
-const list = new List();
-list.add('Car wash', false);
-list.add('Dish wash', false);
-list.add('Preparing food', false);
-list.add('shopping', false);
+//PRINT THE LOCAL STORAGE
+printLocalStorage();
 
-const kebabIcon = new Image();
-kebabIcon.src = kIcon;
-kebabIcon.classList.add('icon');
-/* eslint-disable */
-for (let i = 0; i < list.list.length; i++) {
-  /* eslint-enable */
-  const div = document.createElement('div');
-  div.className = 'list-item';
-  div.innerHTML = `<input type="checkbox" class="check-box">
-  <label>${list.list[i].description}</label>
-  <img src="${kIcon}" alt="" class="icon">`;
-  document.querySelector('.container').appendChild(div);
-}
+// REMOVE THE WHOLE LIST
+document.querySelector('.clear-all').addEventListener('click', clearAll);
+
+// ADD NEW TO-DO LIST
+document.getElementById('enter').addEventListener('click', addNew);
+
+// DELETE AN ITEM
+
+
+// EDIT AN ITEM
+document.querySelectorAll('.description-label').forEach((description) => {
+    description.addEventListener('input', saveEdits)
+});

@@ -15,10 +15,18 @@
                 <h1 class="heading">Today's To Do</h1>
             </div>
         </div>
-        <form action="#" id="input-form">
-            <input type="text" placeholder="Add to your list..." id="input-todo">
-            <input type="submit" value="↩︎" id="enter">
+
+        <form name="list-add" id="input-form">
+            <div class="">
+                <input type="text"  placeholder="Add to your list..." id="input-todo" autofocus maxlength="10" minlength="2" required>
+            </div>
+            <div class="">
+                <button type="button" id="enter">↩︎</button>
+            </div>
         </form>
+    </div>
+    <div class="clear-all">
+        <a href=""><h5 id="clear-all">Clear All</h5></a>
     </div>
 </body> 
 </html>
