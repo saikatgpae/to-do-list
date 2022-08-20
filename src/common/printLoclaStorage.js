@@ -11,14 +11,10 @@ kebabIcon.classList.add('icon');
 const printLocalStorage = () => {
   if (localStorage.getItem('toDolist') != null) {
     const storedList = JSON.parse(localStorage.getItem('toDolist'));
-    /* eslint-disable */
-    for (let i = 0; i < storedList.length; i++) {
-      /* eslint-enable */
+    for (let i = 0; i < storedList.length; i + 1) {
       storedList[i].index = i + 1;
     }
-    /* eslint-disable */
-        for (let i = 0; i < storedList.length; i++) {
-    /* eslint-enable */
+    for (let i = 0; i < storedList.length; i + 1) {
       const div = document.createElement('div');
       div.className = 'list-item';
       div.innerHTML = `<h5 class="d-none">${i}</h5><input type="checkbox" class="check-box">
