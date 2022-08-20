@@ -1,7 +1,5 @@
 const underline = (e) => {
   if (e.currentTarget.checked === true) {
-    const index = e.currentTarget.parentNode.childNodes[0].innerHTML;
-    console.log(index);
     e.currentTarget.parentNode.childNodes[3].style.textDecoration = 'line-through';
     e.currentTarget.parentNode.childNodes[3].style.color = 'gray';
   } else {
@@ -9,5 +7,5 @@ const underline = (e) => {
     e.currentTarget.parentNode.childNodes[3].style.color = 'black';
   }
 };
-/* eslint-disable */
-export { underline }
+
+export default underline;

@@ -1,7 +1,6 @@
 const clearAll = () => {
-  /* eslint-disable */
-    localStorage.removeItem('toDolist');
-    location.reload();
-}
+  localStorage.removeItem('toDolist');
+  window.location.reload();
+};
 
-export { clearAll }
+export default clearAll;

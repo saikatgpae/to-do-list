@@ -6,5 +6,5 @@ const deleteItem = (e) => {
   localStorage.setItem('toDolist', JSON.stringify(storedList));
   window.location.reload();
 };
-/* eslint-disable */
-export { deleteItem }
+
+export default deleteItem;

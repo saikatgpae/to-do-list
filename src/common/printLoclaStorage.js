@@ -12,9 +12,12 @@ const printLocalStorage = () => {
   if (localStorage.getItem('toDolist') != null) {
     const storedList = JSON.parse(localStorage.getItem('toDolist'));
     /* eslint-disable */
+    for (let i = 0; i < storedList.length; i++) {
+      storedList[i].index = i + 1;
+    }
+    /* eslint-disable */
         for (let i = 0; i < storedList.length; i++) {
-          /* eslint-enable */
-
+    /* eslint-enable */
       const div = document.createElement('div');
       div.className = 'list-item';
       div.innerHTML = `<h5 class="d-none">${i}</h5><input type="checkbox" class="check-box">
@@ -24,6 +27,5 @@ const printLocalStorage = () => {
     }
   }
 };
-/* eslint-disable */
-  export { printLocalStorage };
-  /* eslint-enable */
+
+export default printLocalStorage;

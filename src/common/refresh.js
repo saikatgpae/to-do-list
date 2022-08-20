@@ -1,7 +1,7 @@
 function refresh() {
   document.querySelector('.refresh').classList.toggle('refreshed');
-  /* eslint-disable */
-  location.reload();
+  window.location.reload();
 }
 
-export { refresh };
+export default refresh;
+/* eslint-disable */
