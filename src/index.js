@@ -11,6 +11,7 @@ import deleteItem from './common/deleteItem.js';
 
 const refreshIcon = new Image();
 refreshIcon.src = rIcon;
+
 // Add the image to todo div div.
 refreshIcon.classList.add('refresh');
 document.querySelector('.todo').appendChild(refreshIcon);

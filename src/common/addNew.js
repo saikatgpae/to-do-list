@@ -1,6 +1,15 @@
 import { List } from './lists.js';
 import printLocalStorage from './printLoclaStorage.js';
 
+export class Todo {
+  /* eslint-enable */
+  constructor(description, completed, index) {
+    this.description = description;
+    this.completed = completed;
+    this.index = index;
+  }
+}
+
 const list = new List();
 const addNew = (e) => {
   e.stopPropagation();
