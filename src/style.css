@@ -99,14 +99,12 @@ h1 {
   margin: 0;
   text-align: center;
   display: inline;
-}
-
-.clear-all > a {
   text-decoration: none;
   color: rgb(115, 113, 113);
+  cursor: pointer;
 }
 
-.clear-all > a:hover {
+.clear-all > h5:hover {
   text-decoration-line: underline;
 }
 

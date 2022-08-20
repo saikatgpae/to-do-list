@@ -21,14 +21,6 @@ document.querySelector('.refresh').addEventListener('click', refresh);
 // ADD NEW TO-DO LIST
 document.getElementById('enter').addEventListener('click', addNew);
 
-// LINE-THROUGH AN ITEM CHECKING THE CHECKBOX
-document.querySelectorAll('.check-box').forEach((value) => {
-  value.addEventListener('input', underline);
-});
-
-// REMOVE THE LIST OF CHECKED ITEMS
-document.querySelector('.clear-all').addEventListener('click', clearAll);
-
 // PRINT THE LOCAL STORAGE
 printLocalStorage();
 
@@ -49,3 +41,14 @@ document.querySelectorAll('.bin').forEach((bin) => {
 document.querySelectorAll('.list-item').forEach((item) => {
   item.addEventListener('click', changeItemAppearence);
 });
+
+// REMOVE THE LIST OF CHECKED ITEMS
+document.querySelector('.clear-all').addEventListener('click', clearAll);
+
+// LINE-THROUGH AN ITEM CHECKING THE CHECKBOX
+document.querySelectorAll('.check-box').forEach((value) => {
+  value.addEventListener('change', underline);
+});
+
+// WINDOW ONLOAD EVENT
+// window.addEventListener('load', windowOnload);

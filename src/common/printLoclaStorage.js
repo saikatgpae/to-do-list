@@ -13,6 +13,7 @@ const printLocalStorage = () => {
     const storedList = JSON.parse(localStorage.getItem('toDolist'));
     /* eslint-disable */
     for (let i = 0; i < storedList.length; i++) {
+      /* eslint-enable */
       storedList[i].index = i + 1;
     }
     /* eslint-disable */
