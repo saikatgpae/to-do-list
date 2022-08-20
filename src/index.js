@@ -21,11 +21,11 @@ document.querySelector('.refresh').addEventListener('click', refresh);
 // ADD NEW TO-DO LIST
 document.getElementById('enter').addEventListener('click', addNew);
 
-// PRINT THE LOCAL STORAGE
-printLocalStorage();
-
 // Taking Inputs to use enter key
 document.querySelector('#input-todo').addEventListener('change', addNew);
+
+// PRINT THE LOCAL STORAGE
+printLocalStorage();
 
 // EDIT AN ITEM
 document.querySelectorAll('.description-label').forEach((description) => {
@@ -49,6 +49,3 @@ document.querySelector('.clear-all').addEventListener('click', clearAll);
 document.querySelectorAll('.check-box').forEach((value) => {
   value.addEventListener('change', underline);
 });
-
-// WINDOW ONLOAD EVENT
-// window.addEventListener('load', windowOnload);

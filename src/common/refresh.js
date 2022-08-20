@@ -4,4 +4,3 @@ const refresh = () => {
 };
 
 export default refresh;
-/* eslint-disable */

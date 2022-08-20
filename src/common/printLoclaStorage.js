@@ -11,10 +11,8 @@ kebabIcon.classList.add('icon');
 const printLocalStorage = () => {
   if (localStorage.getItem('toDolist') != null) {
     const storedList = JSON.parse(localStorage.getItem('toDolist'));
-    for (let i = 0; i < storedList.length; i + 1) {
-      storedList[i].index = i + 1;
-    }
-    for (let i = 0; i < storedList.length; i + 1) {
+    document.querySelector('.container').textContent = '';
+    for (let i = 0; i < storedList.length; i += 1) {
       const div = document.createElement('div');
       div.className = 'list-item';
       div.innerHTML = `<h5 class="d-none">${i}</h5><input type="checkbox" class="check-box">

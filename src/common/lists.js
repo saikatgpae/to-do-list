@@ -14,8 +14,11 @@ export class List {
 
   add(description, completed) {
     if (Array.isArray(this.list)) {
-      const index = this.list.length;
+      const storedTodoList = JSON.parse(localStorage.getItem('toDolist')) ?? [];
+      this.list = storedTodoList;
+      const index = this.list.length + 1;
       this.list.push(new Todo(description, completed, index));
+      localStorage.setItem('toDolist', JSON.stringify(this.list));
     }
   }
 
