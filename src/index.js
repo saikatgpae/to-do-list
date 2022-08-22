@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import rIcon from './images/refresh-icon.png';
 import refresh from './common/refresh.js';
