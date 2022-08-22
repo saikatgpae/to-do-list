@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
-    "start": "webpack serve --open-app 'Google Chrome'"
+    "start": "webpack serve --open-app 'Google Chrome'",
+    "build": "webpack",
+    "deploy": "gh-pages -d dist/"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/saikatgpae/to-do-list/issues"
   },
-  "homepage": "https://github.com/saikatgpae/to-do-list#readme",
+  "homepage": "https://github.com/saikatgpae/to-do-list",
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
@@ -28,6 +30,9 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
+    "gh-pages": "^4.0.0",
+    "github": "^14.0.0",
+    "github-page": "^0.0.2",
     "hint": "^7.1.1",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.54.4",
