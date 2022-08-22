@@ -1,7 +1,7 @@
 import { List } from './lists.js';
 
 const addNew = (e) => {
-  e.stopPropagation();
+  e.preventDefault();
 
   const list = new List();
   const description = document.getElementById('input-todo').value;
