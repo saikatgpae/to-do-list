@@ -12,13 +12,9 @@ export class List {
     this.list = [];
   }
 
-  add(description, completed) {
+  add(description) {
     if (Array.isArray(this.list)) {
-      const storedTodoList = JSON.parse(localStorage.getItem('toDolist')) ?? [];
-      this.list = storedTodoList;
-      const index = this.list.length + 1;
-      this.list.push(new Todo(description, completed, index));
-      localStorage.setItem('toDolist', JSON.stringify(this.list));
+      this.list.push(new Todo(description, false, this.list.length));
     }
   }
 

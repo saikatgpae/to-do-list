@@ -8,9 +8,16 @@ import saveEdits from './common/saveEdits.js';
 import underline from './common/underline.js';
 import changeItemAppearence from './common/changeItemAppearence.js';
 import deleteItem from './common/deleteItem.js';
+import setIndex from './common/setIndex.js';
 
 const refreshIcon = new Image();
 refreshIcon.src = rIcon;
+
+// PRINT THE LOCAL STORAGE
+printLocalStorage();
+
+// SET INDEX OF LOCAL STORAGE
+setIndex();
 
 // Add the image to todo div div.
 refreshIcon.classList.add('refresh');
@@ -24,9 +31,6 @@ document.getElementById('enter').addEventListener('click', addNew);
 
 // Taking Inputs to use enter key
 document.querySelector('#input-todo').addEventListener('change', addNew);
-
-// PRINT THE LOCAL STORAGE
-printLocalStorage();
 
 // EDIT AN ITEM
 document.querySelectorAll('.description-label').forEach((description) => {
