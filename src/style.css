@@ -6,11 +6,16 @@ body {
   font-family: $font;
 }
 
+.app {
+  /* box-shadow: 0 0 5px rgb(222, 224, 224); */
+}
+
 .main {
   padding: 10px;
   border: 1px solid rgb(229, 226, 226);
-  text-shadow: 2px 2px 4px #6d6969;
-  box-shadow: 0 0 5px rgb(222, 224, 224);
+  text-shadow: 2px 2px 4px #038b90;
+
+  /* box-shadow: 0 0 5px rgb(222, 224, 224); */
 }
 
 h1 {
@@ -46,8 +51,8 @@ h1 {
   display: flex;
   padding: 10px;
   border: 1px solid rgb(229, 226, 226);
-  text-shadow: 2px 2px 4px #b4b0b0;
-  box-shadow: 0 0 5px rgb(222, 224, 224);
+
+  /* box-shadow: 1px 1px 5px rgb(170, 174, 174); */
   justify-content: space-between;
 }
 
@@ -100,7 +105,8 @@ h1 {
   text-align: center;
   display: inline;
   text-decoration: none;
-  color: rgb(115, 113, 113);
+
+  /* color: rgb(115, 113, 113); */
   cursor: pointer;
 }
 
@@ -118,4 +124,8 @@ h1 {
 
 .d-block {
   display: block;
+}
+
+.footer {
+  font-size: 8px;
 }

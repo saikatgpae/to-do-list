@@ -7,24 +7,34 @@
     <title>To-do List</title>
 </head>
 <body>
-    <div class="main">
-        <div class="todo">
-            <h1 class="heading">Today's To Do</h1>
+    <div class="container mt-4">
+        <div class="app container m-0">
+            <div class="main">
+                <div class="todo">
+                    <h1 class="heading text-primary">Today's To Do</h1>
+                </div>
+            </div>
+            <form name="list-add" id="input-form">
+                <div class="">
+                    <input type="text"  placeholder="Add to your list..." id="input-todo" autofocus maxlength="20" minlength="2" required>
+                </div>
+                <div class="">
+                    <button type="button" id="enter">↩︎</button>
+                </div>
+            </form>
+            <div class="all-lists">
+                
+            </div>
+            <div class="clear-all text-danger">
+                <h5 id="clear-all">Clear All Completed</h5>
+            </div>
+            <footer class="footer">
+                <div class="text-center p-4 mt-4">
+                    © 2021 Copyright:
+                    <a href="">Saikat Chakraborty</a>
+                  </div>
+            </footer>
         </div>
-    </div>
-    <form name="list-add" id="input-form">
-        <div class="">
-            <input type="text"  placeholder="Add to your list..." id="input-todo" autofocus maxlength="20" minlength="2" required>
-        </div>
-        <div class="">
-            <button type="button" id="enter">↩︎</button>
-        </div>
-    </form>
-    <div class="container">
-        
-    </div>
-    <div class="clear-all">
-        <h5 id="clear-all">Clear All Completed</h5>
     </div>
 </body> 
 </html>
