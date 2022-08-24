@@ -71,7 +71,6 @@ h1 {
 }
 
 #input-todo {
-  /* width: auto; */
   height: 30px;
   padding-left: 15px;
   font-style: italic;
@@ -127,5 +126,5 @@ h1 {
 }
 
 .footer {
-  font-size: 8px;
+  font-size: 12px;
 }
