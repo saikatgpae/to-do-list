@@ -12,14 +12,14 @@ const printLocalStorage = () => {
   if (localStorage.getItem('toDolist') != null) {
     const storedList = JSON.parse(localStorage.getItem('toDolist'));
     document.querySelector('.all-lists').textContent = '';
-    for (let i = 0; i < storedList.length; i += 1) {
+    storedList.forEach((_, i) => {
       const div = document.createElement('div');
       div.className = 'list-item';
       div.innerHTML = `<h5 class="d-none">${i}</h5><input type="checkbox" class="check-box">
-      <div class="description-label text-info" contenteditable="true">${storedList[i].description}</div><img src="${kIcon}" alt="Kebab Icon" class="kebab icon">
+      <div class="description-label" contenteditable="true">${storedList[i].description}</div><img src="${kIcon}" alt="Kebab Icon" class="kebab icon">
       <img src="${bIcon}" alt="d-none icon bin" class="bin icon ">`;
       document.querySelector('.all-lists').appendChild(div);
-    }
+    }, 1);
   }
 };
 
