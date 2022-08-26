@@ -15,51 +15,53 @@ const listHTML = (obj) => {
   return list;
 };
 
-test('New Entry should save to localStorage', () => {
-  document.body.innerHTML = mockHtml;
-  const toDoContainer = document.querySelector('.listContainer');
-  const object = {};
-  object.description = 'Car Wash';
-  object.index = 1;
-  object.complete = false;
-  toDoContainer.innerHTML += listHTML(object);
-  expect(toDoContainer.children.length).toBe(1);
-  localStorageArray.push(object);
-  expect(localStorageArray.length).toBe(1);
-  const fetchList = toDoContainer.children[0];
-  const fetchText = fetchList.querySelector('.description');
-  expect(fetchText.value).toMatch(object.description);
+describe('Test add and delete method', () => {
+  test('New Entry should save to localStorage', () => {
+    document.body.innerHTML = mockHtml;
+    const toDoContainer = document.querySelector('.listContainer');
+    const object = {};
+    object.description = 'Car Wash';
+    object.index = 1;
+    object.complete = false;
+    toDoContainer.innerHTML += listHTML(object);
+    expect(toDoContainer.children.length).toBe(1);
+    localStorageArray.push(object);
+    expect(localStorageArray.length).toBe(1);
+    const fetchList = toDoContainer.children[0];
+    const fetchText = fetchList.querySelector('.description');
+    expect(fetchText.value).toMatch(object.description);
 
-  object.description = 'Shopping';
-  object.index = 1;
-  object.complete = false;
-  localStorageArray.push(object);
-  expect(localStorageArray.length).toBe(2);
-  addNew();
-});
-
-test('Remove the selected item', () => {
-  const localStorageArray = [];
-  document.body.innerHTML = mockHtml;
-  const toDoContainer = document.querySelector('.listContainer');
-  const object = {};
-  object.description = 'Car Wash';
-  object.index = 1;
-  object.complete = false;
-  toDoContainer.innerHTML += listHTML(object);
-  expect(toDoContainer.children.length).toBe(1);
-  localStorageArray.push(object);
-  expect(localStorageArray.length).toBe(1);
-
-  document.querySelectorAll('.delete').forEach((button) => {
-    button.addEventListener('click', () => {
-      button.parentNode.remove();
-      expect(toDoContainer.children.length).toBe(0);
-      const index = Number(button.id.split('-')[1]);
-      localStorageArray.splice(index - 1, 1);
-      expect(localStorageArray.length).toBe(0);
-    });
+    object.description = 'Shopping';
+    object.index = 1;
+    object.complete = false;
+    localStorageArray.push(object);
+    expect(localStorageArray.length).toBe(2);
+    addNew();
   });
-  document.querySelector('#button-1').click();
-  deleteItem();
+
+  test('Remove the selected item', () => {
+    const localStorageArray = [];
+    document.body.innerHTML = mockHtml;
+    const toDoContainer = document.querySelector('.listContainer');
+    const object = {};
+    object.description = 'Car Wash';
+    object.index = 1;
+    object.complete = false;
+    toDoContainer.innerHTML += listHTML(object);
+    expect(toDoContainer.children.length).toBe(1);
+    localStorageArray.push(object);
+    expect(localStorageArray.length).toBe(1);
+
+    document.querySelectorAll('.delete').forEach((button) => {
+      button.addEventListener('click', () => {
+        button.parentNode.remove();
+        expect(toDoContainer.children.length).toBe(0);
+        const index = Number(button.id.split('-')[1]);
+        localStorageArray.splice(index - 1, 1);
+        expect(localStorageArray.length).toBe(0);
+      });
+    });
+    document.querySelector('#button-1').click();
+    deleteItem();
+  });
 });
