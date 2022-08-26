@@ -4,11 +4,17 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "webpack --mode development",
     "start": "webpack serve --open-app 'Google Chrome'",
     "build": "webpack",
     "deploy": "gh-pages -d dist/"
+  },
+  "jest": {
+    "resetMocks": false,
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   },
   "repository": {
     "type": "git",
@@ -23,6 +29,7 @@
   "homepage": "https://github.com/saikatgpae/to-do-list",
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "@babel/preset-env": "^7.18.10",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
@@ -35,6 +42,9 @@
     "github-page": "^0.0.2",
     "hint": "^7.1.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27.5.1",
+    "jest-localstorage-mock": "^2.4.22",
     "sass": "^1.54.4",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
@@ -47,6 +57,7 @@
     "webpack-dev-server": "^4.10.0"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.0",
+    "save-dev": "^0.0.1-security"
   }
 }
