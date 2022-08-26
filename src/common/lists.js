@@ -18,10 +18,10 @@ export class List {
     }
   }
 
-  removeItem(index) {
-    if (Array.isArray(this.list)) {
-      const array = this.list;
-      array.splice(index, 1);
-    }
-  }
+  // removeItem(index) {
+  //   if (Array.isArray(this.list)) {
+  //     const array = this.list;
+  //     array.splice(index, 1);
+  //   }
+  // }
 }
