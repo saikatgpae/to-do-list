@@ -13,37 +13,39 @@ const listHTML = (obj) => {
   return list;
 };
 
-test('Edited item should be saved to locla storage', () => {
-  document.body.innerHTML = mockHtml;
-  const object = {};
-  object.completed = false;
-  object.description = 'shopping';
-  object.index = 1;
-  const toDoContainer = document.querySelector('.listContainer');
-  toDoContainer.innerHTML += listHTML(object);
-  expect(toDoContainer.children.length).toBe(1);
-  localStorageArray.push(object);
-  expect(localStorageArray.length).toBe(1);
-  const id = document.querySelector('.description').id.split('-')[1];
-  expect(localStorageArray[id - 1].description).toMatch('shopping');
-  const newValue = 'Car Wash';
-  localStorageArray[id - 1].description = newValue;
-  expect(localStorageArray[id - 1].description).toMatch('Car Wash');
-});
-
-test('Checked items completed status should be changed as true', () => {
-  expect(document.querySelector('.checkbox').checked).toBeFalsy();
-  document.querySelector('.checkbox').checked = true;
-  expect(document.querySelector('.checkbox').checked).toBeTruthy();
-  const index = document.querySelector('.checkbox').id.split('-')[1];
-  localStorageArray[index - 1].completed = true;
-  expect(localStorageArray[index - 1].completed).toBeTruthy();
-});
-
-test('Delete All completed', () => {
-  document.querySelector('.clear-all').addEventListener('click', () => {
-    const newArray = localStorageArray.filter((item) => item.completed === false);
-    expect(newArray.length).toBe(0);
+describe('Edit, Checked, Delete all Completed tests', () => {
+  test('Edited item should be saved to locla storage', () => {
+    document.body.innerHTML = mockHtml;
+    const object = {};
+    object.completed = false;
+    object.description = 'shopping';
+    object.index = 1;
+    const toDoContainer = document.querySelector('.listContainer');
+    toDoContainer.innerHTML += listHTML(object);
+    expect(toDoContainer.children.length).toBe(1);
+    localStorageArray.push(object);
+    expect(localStorageArray.length).toBe(1);
+    const id = document.querySelector('.description').id.split('-')[1];
+    expect(localStorageArray[id - 1].description).toMatch('shopping');
+    const newValue = 'Car Wash';
+    localStorageArray[id - 1].description = newValue;
+    expect(localStorageArray[id - 1].description).toMatch('Car Wash');
   });
-  document.querySelector('.clear-all').click();
+
+  test('Checked items completed status should be changed as true', () => {
+    expect(document.querySelector('.checkbox').checked).toBeFalsy();
+    document.querySelector('.checkbox').checked = true;
+    expect(document.querySelector('.checkbox').checked).toBeTruthy();
+    const index = document.querySelector('.checkbox').id.split('-')[1];
+    localStorageArray[index - 1].completed = true;
+    expect(localStorageArray[index - 1].completed).toBeTruthy();
+  });
+
+  test('Delete All completed', () => {
+    document.querySelector('.clear-all').addEventListener('click', () => {
+      const newArray = localStorageArray.filter((item) => item.completed === false);
+      expect(newArray.length).toBe(0);
+    });
+    document.querySelector('.clear-all').click();
+  });
 });
