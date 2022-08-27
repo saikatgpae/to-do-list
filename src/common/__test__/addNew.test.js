@@ -40,25 +40,15 @@ describe('Test add and delete method', () => {
   });
 
   test('Remove the selected item', () => {
-    const localStorageArray = [];
-    document.body.innerHTML = mockHtml;
+    expect(localStorageArray.length).toBe(2);
     const toDoContainer = document.querySelector('.listContainer');
-    const object = {};
-    object.description = 'Car Wash';
-    object.index = 1;
-    object.complete = false;
-    toDoContainer.innerHTML += listHTML(object);
-    expect(toDoContainer.children.length).toBe(1);
-    localStorageArray.push(object);
-    expect(localStorageArray.length).toBe(1);
-
     document.querySelectorAll('.delete').forEach((button) => {
       button.addEventListener('click', () => {
         button.parentNode.remove();
         expect(toDoContainer.children.length).toBe(0);
         const index = Number(button.id.split('-')[1]);
         localStorageArray.splice(index - 1, 1);
-        expect(localStorageArray.length).toBe(0);
+        expect(localStorageArray.length).toBe(1);
       });
     });
     document.querySelector('#button-1').click();
