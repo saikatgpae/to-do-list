@@ -10,6 +10,7 @@ const addNew = (e) => {
   const storedTodoList = JSON.parse(localStorage.getItem('toDolist'));
   data = localStorage.getItem('toDolist') ? storedTodoList.concat(list.list) : list.list;
   localStorage.setItem('toDolist', JSON.stringify(data));
+  // e.preventDefault();
   window.location.reload();
 };
 

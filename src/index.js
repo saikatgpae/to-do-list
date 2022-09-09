@@ -28,10 +28,7 @@ document.querySelector('.todo').appendChild(refreshIcon);
 document.querySelector('.refresh').addEventListener('click', refresh);
 
 // ADD NEW TO-DO LIST
-document.getElementById('enter').addEventListener('click', addNew);
-
-// Taking Inputs to use enter key
-document.querySelector('#input-todo').addEventListener('change', addNew);
+document.querySelector('form').addEventListener('submit', addNew);
 
 // EDIT AN ITEM
 document.querySelectorAll('.description-label').forEach((description) => {
