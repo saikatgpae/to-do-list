@@ -2,8 +2,6 @@
  * @jest-environment jsdom
  */
 import localStorageArray from '../__mocks__/localStorage.js';
-import addNew from '../__mocks__/addNew.js';
-import deleteItem from '../__mocks__/deleteItem.js';
 
 const mockHtml = '<ul class="listContainer"></ul>';
 const listHTML = (obj) => {
@@ -36,7 +34,6 @@ describe('Test add and delete method', () => {
     object.complete = false;
     localStorageArray.push(object);
     expect(localStorageArray.length).toBe(2);
-    addNew();
   });
 
   test('Remove the selected item', () => {
@@ -52,6 +49,5 @@ describe('Test add and delete method', () => {
       });
     });
     document.querySelector('#button-1').click();
-    deleteItem();
   });
 });
